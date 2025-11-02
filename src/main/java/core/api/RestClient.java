@@ -15,11 +15,13 @@ public class RestClient {
         this.requestSpec = requestSpec;
     }
 
-    public Response standarGet(String endpoint) {
+    public Response get(String endpoint) {
         return given(requestSpec)
                 .when()
                 .get(endpoint)
                 .then()
+                .log()
+                .all()
                 .extract()
                 .response();
     }

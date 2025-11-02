@@ -1,5 +1,8 @@
 package core.config;
 
+import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.specification.RequestSpecification;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -13,13 +16,12 @@ public class ApiConfig {
             throw new RuntimeException("Failed to load properties", e);
         }
     }
-    // host
-    public static String getBaseUrl() {
-        return props.getProperty("base.url");
+
+    public static RequestSpecification requestSpecBase() {
+        return new RequestSpecBuilder()
+                .setBaseUri(props.getProperty("base.url"))
+                .addHeader("Content-Type", "application/json")
+                .build();
     }
 
-    // 👇 tambahin main method cuma buat ngetes
-    public static void main(String[] args) {
-        System.out.println("Base URL: " + getBaseUrl());
-    }
 }

@@ -15,7 +15,7 @@ public class RestClient {
         this.requestSpec = requestSpec;
     }
 
-    public Response get(String endpoint) {
+    public Response standarGet(String endpoint) {
         return given(requestSpec)
                 .when()
                 .get(endpoint)

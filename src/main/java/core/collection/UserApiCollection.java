@@ -12,8 +12,7 @@ public class UserApiCollection extends RestClient {
     }
 
     public Response getUserData() {
-
-        return restClient.get(ApiEndpoints.GET_USER);
+        return standarGet(ApiEndpoints.GET_USER);
     }
 
 }

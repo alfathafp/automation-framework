@@ -1,0 +1,14 @@
+{
+  "connection_details": [
+    {
+      "hostname": "localhost",
+      "dbname": "alphadb",
+      "portnumber": "3306",
+      "username": "ALPHADB_USERNAME",
+      "password": "ALPHADB_PASSWORD",
+      "connectionmethod": "jdbc",
+      "dbid": "alphadb",
+      "dbtype": "mysql"
+    }
+  ]
+}
